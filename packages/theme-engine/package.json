@@ -1,0 +1,26 @@
+{
+  "name": "@great-indian-wedding/theme-engine",
+  "version": "1.0.0",
+  "description": "Dynamic theme transformation engine for the tri-app ecosystem",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
