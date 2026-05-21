@@ -3,7 +3,7 @@ import { TravelerQuizQuestion, TravelerArchetype } from '../types';
 export const TRAVELER_QUIZ_QUESTIONS: TravelerQuizQuestion[] = [
   {
     id: 1,
-    question: 'What's your ideal honeymoon vibe?',
+    question: "What's your ideal honeymoon vibe?",
     answers: [
       'Relaxing on pristine beaches',
       'Breathing in mountain air',
@@ -44,7 +44,7 @@ export const TRAVELER_QUIZ_QUESTIONS: TravelerQuizQuestion[] = [
     id: 4,
     question: 'How important is comfort on your honeymoon?',
     answers: [
-      'Important but don\'t mind simple stays',
+      "Important but don't mind simple stays",
       'Moderate - need some comfort',
       'Important for cultural sites',
       'Less important - adventure is key',
@@ -60,7 +60,7 @@ export const TRAVELER_QUIZ_QUESTIONS: TravelerQuizQuestion[] = [
       'Hot and sunny',
       'Cool and crisp',
       'Mild and pleasant',
-      'Varied - don\'t mind extremes',
+      "Varied - don't mind extremes",
       'Comfortable for relaxation',
       'Any weather works',
     ],
@@ -94,7 +94,7 @@ export const TRAVELER_QUIZ_QUESTIONS: TravelerQuizQuestion[] = [
   },
   {
     id: 8,
-    question: 'What's your ideal budget range for honeymoon?',
+    question: "What's your ideal budget range for honeymoon?",
     answers: [
       '₹5L - ₹10L (Tropical paradise)',
       '₹5L - ₹15L (Mountain escape)',

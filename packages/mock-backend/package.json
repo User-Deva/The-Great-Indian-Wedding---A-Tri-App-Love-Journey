@@ -1,0 +1,26 @@
+{
+  "name": "@great-indian-wedding/mock-backend",
+  "version": "1.0.0",
+  "description": "LocalStorage-backed mock data layer shared across the three apps",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@great-indian-wedding/theme-engine": "workspace:*",
+    "@great-indian-wedding/auth": "workspace:*",
+    "@great-indian-wedding/our-story": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

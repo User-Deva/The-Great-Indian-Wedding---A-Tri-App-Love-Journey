@@ -19,6 +19,7 @@ export default defineConfig({
       '@great-indian-wedding/auth': path.resolve(__dirname, '../../packages/auth/src'),
       '@great-indian-wedding/ui': path.resolve(__dirname, '../../packages/ui/src'),
       '@great-indian-wedding/our-story': path.resolve(__dirname, '../../packages/our-story/src'),
+      '@great-indian-wedding/mock-backend': path.resolve(__dirname, '../../packages/mock-backend/src'),
     },
   },
 });

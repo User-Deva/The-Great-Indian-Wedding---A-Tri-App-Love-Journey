@@ -20,7 +20,11 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@great-indian-wedding/theme-engine": "workspace:*"
+    "@great-indian-wedding/theme-engine": "workspace:*",
+    "@great-indian-wedding/auth": "workspace:*",
+    "@great-indian-wedding/mock-backend": "workspace:*",
+    "@great-indian-wedding/our-story": "workspace:*",
+    "react-router-dom": "^6.20.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

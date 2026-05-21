@@ -20,7 +20,8 @@
     "@great-indian-wedding/theme-engine": "workspace:*",
     "@great-indian-wedding/auth": "workspace:*",
     "@great-indian-wedding/ui": "workspace:*",
-    "@great-indian-wedding/our-story": "workspace:*"
+    "@great-indian-wedding/our-story": "workspace:*",
+    "@great-indian-wedding/mock-backend": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

@@ -47,6 +47,9 @@ importers:
       '@great-indian-wedding/auth':
         specifier: workspace:*
         version: link:../../packages/auth
+      '@great-indian-wedding/mock-backend':
+        specifier: workspace:*
+        version: link:../../packages/mock-backend
       '@great-indian-wedding/our-story':
         specifier: workspace:*
         version: link:../../packages/our-story
@@ -102,6 +105,9 @@ importers:
       '@great-indian-wedding/auth':
         specifier: workspace:*
         version: link:../../packages/auth
+      '@great-indian-wedding/mock-backend':
+        specifier: workspace:*
+        version: link:../../packages/mock-backend
       '@great-indian-wedding/our-story':
         specifier: workspace:*
         version: link:../../packages/our-story
@@ -157,6 +163,9 @@ importers:
       '@great-indian-wedding/auth':
         specifier: workspace:*
         version: link:../../packages/auth
+      '@great-indian-wedding/mock-backend':
+        specifier: workspace:*
+        version: link:../../packages/mock-backend
       '@great-indian-wedding/our-story':
         specifier: workspace:*
         version: link:../../packages/our-story
@@ -220,6 +229,22 @@ importers:
         specifier: ^5.3.3
         version: 5.9.3
 
+  packages/mock-backend:
+    dependencies:
+      '@great-indian-wedding/auth':
+        specifier: workspace:*
+        version: link:../auth
+      '@great-indian-wedding/our-story':
+        specifier: workspace:*
+        version: link:../our-story
+      '@great-indian-wedding/theme-engine':
+        specifier: workspace:*
+        version: link:../theme-engine
+    devDependencies:
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
   packages/our-story:
     dependencies:
       '@supabase/supabase-js':
@@ -245,6 +270,15 @@ importers:
 
   packages/ui:
     dependencies:
+      '@great-indian-wedding/auth':
+        specifier: workspace:*
+        version: link:../auth
+      '@great-indian-wedding/mock-backend':
+        specifier: workspace:*
+        version: link:../mock-backend
+      '@great-indian-wedding/our-story':
+        specifier: workspace:*
+        version: link:../our-story
       '@great-indian-wedding/theme-engine':
         specifier: workspace:*
         version: link:../theme-engine
@@ -254,6 +288,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      react-router-dom:
+        specifier: ^6.20.1
+        version: 6.30.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@types/react':
         specifier: ^18.2.37
