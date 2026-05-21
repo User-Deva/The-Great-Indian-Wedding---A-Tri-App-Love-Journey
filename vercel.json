@@ -1,0 +1,11 @@
+{
+  "buildCommand": "pnpm install && node scripts/build-hub.js",
+  "outputDirectory": "dist",
+  "installCommand": "npm i -g pnpm && pnpm install",
+  "framework": null,
+  "rewrites": [
+    { "source": "/rishta/(.*)", "destination": "/rishta/index.html" },
+    { "source": "/shaadi-sajao/(.*)", "destination": "/shaadi-sajao/index.html" },
+    { "source": "/jannat-safar/(.*)", "destination": "/jannat-safar/index.html" }
+  ]
+}

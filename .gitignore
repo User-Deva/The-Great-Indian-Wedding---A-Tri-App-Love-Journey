@@ -1,6 +1,5 @@
 # Node modules
 node_modules/
-pnpm-lock.yaml
 yarn.lock
 package-lock.json
 
@@ -43,3 +42,6 @@ coverage/
 # Development
 .vite-temp/
 *.pem
+
+# Duplicate app directory
+my-wedding-app/

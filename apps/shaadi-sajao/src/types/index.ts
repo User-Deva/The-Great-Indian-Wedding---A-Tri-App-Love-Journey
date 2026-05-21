@@ -56,11 +56,11 @@ export interface GuestListEntry {
   phone?: string;
   dietaryPreference: 'vegetarian' | 'non-vegetarian' | 'vegan' | 'jain';
   rsvpStatus: 'pending' | 'accepted' | 'declined';
-  +1Count: number; // Number of additional guests
+  plusOneCount: number; // Number of additional guests
   seatingPreference?: string;
 }
 
-export interface Ritual {
+export interface WeddingRitual {
   id: string;
   weddingId: string;
   name: string; // Mehendi, Sangeet, Haldi, etc.

@@ -101,7 +101,7 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({ destination, o
             {destination.visaRequirement === 'none' ? '✓ No Visa' : `${destination.visaRequirement}`}
           </span>
           <span style={{ fontSize: '0.75rem', backgroundColor: '#f0f0f0', padding: '0.25rem 0.5rem', borderRadius: '4px' }}>
-            {destination.nights || Math.ceil((destination.estimatedBudget.min / 150000) * 5)} days
+            {Math.ceil((destination.estimatedBudget.min / 150000) * 5)} days
           </span>
         </div>
 

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Great Indian Wedding — A Tri-App Love Journey</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #FFF8E1 0%, #F8D5CC 50%, #E0F7FA 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #B71C1C, #C2185B, #00695C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+    .hero .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    .hero .tagline {
+      font-size: 0.95rem;
+      color: #999;
+      margin-bottom: 2rem;
+    }
+    .journey-line {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .journey-line .stage {
+      background: rgba(255,255,255,0.7);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    .journey-line .arrow { color: #ccc; }
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+    .app-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 300ms ease, box-shadow 300ms ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .app-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    .app-card .card-header {
+      padding: 2rem 1.5rem 1.5rem;
+      color: white;
+    }
+    .app-card .card-header h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+    .app-card .card-header p {
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+    .app-card .card-body {
+      padding: 1.5rem;
+    }
+    .app-card .card-body p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .app-card .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .app-card .features span {
+      background: #f0f0f0;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      color: #555;
+    }
+    .app-card .card-footer {
+      padding: 0 1.5rem 1.5rem;
+      text-align: center;
+    }
+    .app-card .card-footer .btn {
+      display: inline-block;
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: white;
+      text-decoration: none;
+      transition: opacity 200ms;
+    }
+    .app-card .card-footer .btn:hover { opacity: 0.9; }
+    .rishta .card-header { background: linear-gradient(135deg, #8FAF7E, #6B9E5C); }
+    .rishta .btn { background: #8FAF7E; }
+    .shaadi .card-header { background: linear-gradient(135deg, #B71C1C, #6A1429); }
+    .shaadi .btn { background: #B71C1C; }
+    .jannat .card-header { background: linear-gradient(135deg, #00695C, #004D40); }
+    .jannat .btn { background: #00695C; }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+      font-size: 0.85rem;
+    }
+    .theme-bar {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .theme-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>The Great Indian Wedding</h1>
+    <p class="subtitle">A Tri-App Love Journey</p>
+    <p class="tagline">From first match to forever after — three apps, one beautiful story</p>
+
+    <div class="journey-line">
+      <span class="stage">🔍 Seeking</span>
+      <span class="arrow">→</span>
+      <span class="stage">💕 Matched</span>
+      <span class="arrow">→</span>
+      <span class="stage">📍 Date Set</span>
+      <span class="arrow">→</span>
+      <span class="stage">☕ Dating</span>
+      <span class="arrow">→</span>
+      <span class="stage">💍 Wedding</span>
+      <span class="arrow">→</span>
+      <span class="stage">✈️ Honeymoon</span>
+    </div>
+  </div>
+
+  <div class="apps-grid">
+    <a href="rishta/" class="app-card rishta">
+      <div class="card-header">
+        <h2>✨ Rishta</h2>
+        <p>The Matchmaker</p>
+      </div>
+      <div class="card-body">
+        <p>
+          Where destinies meet over chai. Discover compatible matches with our
+          Kismat Engine — personality quiz, Guna Milan scoring, and AI-curated
+          first date suggestions.
+        </p>
+        <div class="features">
+          <span>Personality Quiz</span>
+          <span>Kismat Algorithm</span>
+          <span>Date Venues</span>
+          <span>Voice Bio</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="btn">Find Your Match →</span>
+      </div>
+    </a>
+
+    <a href="shaadi-sajao/" class="app-card shaadi">
+      <div class="card-header">
+        <h2>💍 Shaadi Sajao</h2>
+        <p>Powered by Varmala — Wedding Planner</p>
+      </div>
+      <div class="card-body">
+        <p>
+          Plan the wedding of your dreams. Budget tracking, vendor management,
+          ritual checklists (Mehendi to Reception), family coordination, and
+          AI-powered wedding styling.
+        </p>
+        <div class="features">
+          <span>Budget Tracker</span>
+          <span>Vendor Hub</span>
+          <span>Ritual Planner</span>
+          <span>AI Stylist</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="btn">Plan Your Wedding →</span>
+      </div>
+    </a>
+
+    <a href="jannat-safar/" class="app-card jannat">
+      <div class="card-header">
+        <h2>✈️ Jannat Safar</h2>
+        <p>Honeymoon Planner</p>
+      </div>
+      <div class="card-body">
+        <p>
+          Your forever begins with the perfect escape. Travel personality quiz,
+          12+ curated destinations, flight & hotel booking, itinerary planning,
+          and expense tracking.
+        </p>
+        <div class="features">
+          <span>Travel Quiz</span>
+          <span>12+ Destinations</span>
+          <span>Itinerary Builder</span>
+          <span>Expense Wallet</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="btn">Plan Your Honeymoon →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="theme-bar">
+    <div class="theme-dot" style="background: #8FAF7E;" title="Mehendi Morning"></div>
+    <div class="theme-dot" style="background: #F4A7B9;" title="Gulabi Romance"></div>
+    <div class="theme-dot" style="background: #C2185B;" title="Jasmine Evenings"></div>
+    <div class="theme-dot" style="background: #B71C1C;" title="Shaadi Season"></div>
+    <div class="theme-dot" style="background: #6A1429;" title="Baraat Bliss"></div>
+    <div class="theme-dot" style="background: #00695C;" title="Honeymoon Haze"></div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 The Great Indian Wedding. Where destinies meet. 🪷</p>
+    <p style="margin-top: 0.5rem; font-size: 0.75rem;">
+      Built with React + TypeScript + Vite + Zustand + Supabase
+    </p>
+  </div>
+</body>
+</html>
