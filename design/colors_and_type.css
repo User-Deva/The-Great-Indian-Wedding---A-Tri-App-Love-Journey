@@ -1,0 +1,226 @@
+/*
+  The Great Indian Wedding — Design Tokens
+  ----------------------------------------
+  Single source for colours, type, scale, spacing, radii, shadows, motion.
+  Bind to var(--theme-primary | --theme-secondary | --theme-accent) when a
+  surface should change with the journey stage. Bind to var(--app-rishta |
+  --app-shaadi | --app-jannat) when it must stay app-locked.
+
+  Apply a stage by setting `data-stage="SEEKING|MATCHED|DATE_SET|DATING|WEDDING|HONEYMOONING"`
+  on any ancestor (we set it on <html> from the theme engine).
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Yatra+One&family=Kalam:wght@400;700&display=swap');
+
+:root {
+  /* ────────────────────────── App signature colours ──────────────────────────
+     These never change — they identify which app you are looking at. */
+  --app-rishta:        #0E0E0E;
+  --app-rishta-ink:    #D4AF37;
+  --app-shaadi:        #B71C1C;
+  --app-shaadi-ink:    #FFFFF0;
+  --app-jannat:        #00695C;
+  --app-jannat-ink:    #FFD54F;
+
+  /* ────────────────────────── Neutrals ──────────────────────────
+     Pure white / pure black do not exist in this brand. */
+  --ink-1: #1a1a1a;
+  --ink-2: #4a4a4a;
+  --ink-3: rgba(0, 0, 0, 0.55);
+  --ink-4: rgba(0, 0, 0, 0.35);
+  --line-1: rgba(0, 0, 0, 0.08);
+  --line-2: rgba(0, 0, 0, 0.12);
+  --line-3: rgba(0, 0, 0, 0.18);
+  --bg-page:    #FFF8EF;
+  --bg-card:    #FFFFFF;
+  --bg-surface: #FAFAF6;
+  --ivory:      #FFFFF0;
+  --cream:      #FFF8E1;
+  --champagne:  #F7E7CE;
+
+  /* ────────────────────────── Semantic tones ──────────────────────────
+     Reserved for status pills, alerts, verification badges. */
+  --tone-positive-bg: #e6f4ea; --tone-positive-fg: #1b6e3a;
+  --tone-warning-bg:  #fff3e0; --tone-warning-fg:  #a35400;
+  --tone-danger-bg:   #fdecea; --tone-danger-fg:   #a8201a;
+  --tone-info-bg:     #e7f0fb; --tone-info-fg:     #1f4f87;
+  --tone-neutral-bg:  #eef0f5; --tone-neutral-fg:  #444;
+  --tone-verified:    #4caf50;
+
+  /* ────────────────────────── Default theme ──────────────────────────
+     Falls back to SEEKING until a [data-stage] sets it. */
+  --theme-name: 'Mehendi Night';
+  --theme-motif: 'Gold-leaf henna';
+  --theme-vibe: 'Hopeful, formal';
+  --theme-primary:   #0E0E0E;
+  --theme-secondary: #FFF8E1;
+  --theme-accent:    #D4AF37;
+  --theme-gradient:  linear-gradient(135deg, #0E0E0E 0%, #D4AF37 100%);
+
+  /* ────────────────────────── Typography ──────────────────────────
+     Inter is the body workhorse. Cormorant Garamond is the display family.
+     Yatra One is the wedding-invite flourish. Kalam is the Devanagari fallback. */
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Cormorant Garamond', 'Inter', Georgia, serif;
+  --font-script:  'Yatra One', 'Kalam', cursive;
+  --font-mono:    ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, monospace;
+
+  /* Scale — fluid for hero, fixed for the rest. */
+  --fs-hero:  clamp(2rem, 1.6rem + 1.4vw, 3.5rem);   /* 32 → 56 */
+  --fs-h1:    2.2rem;     /* 35.2 */
+  --fs-h2:    1.6rem;     /* 25.6 */
+  --fs-h3:    1.4rem;     /* 22.4 */
+  --fs-h4:    1.25rem;    /* 20   */
+  --fs-lead:  1.05rem;    /* 16.8 */
+  --fs-body:  0.95rem;    /* 15.2 */
+  --fs-meta:  0.85rem;    /* 13.6 */
+  --fs-micro: 0.78rem;    /* 12.5 */
+
+  --lh-tight:   1.15;
+  --lh-snug:    1.3;
+  --lh-normal:  1.5;
+  --lh-loose:   1.7;
+
+  --tracking-tight:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.08em;
+
+  /* ────────────────────────── Spacing (4 px base) ────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ────────────────────────── Radii ────────────────────────── */
+  --radius-chip:    8px;
+  --radius-input:   10px;
+  --radius-button:  10px;
+  --radius-inner:   12px;
+  --radius-card:    16px;
+  --radius-pill:    999px;
+
+  /* ────────────────────────── Shadows — single-layer, warm-grey ────────────────────────── */
+  --shadow-card:    0 4px 18px rgba(0, 0, 0, 0.06);
+  --shadow-card-2:  0 2px 8px  rgba(0, 0, 0, 0.04);
+  --shadow-button:  0 6px 18px rgba(0, 0, 0, 0.12);
+  --shadow-hover:   0 12px 40px rgba(0, 0, 0, 0.15);
+  --shadow-header:  0 4px 14px rgba(0, 0, 0, 0.10);
+  --shadow-chip:    0 4px 10px rgba(0, 0, 0, 0.12);
+
+  /* ────────────────────────── Motion ────────────────────────── */
+  --dur-flash:   80ms;
+  --dur-hover:   160ms;
+  --dur-press:   120ms;
+  --dur-stage:   300ms;
+  --ease:        ease;
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Max content column. */
+  --max-content: 1280px;
+}
+
+/* ────────────────────────── Stage themes ──────────────────────────
+   Bind via data-stage on <html>, <body> or any wrapping element. */
+[data-stage="SEEKING"] {
+  --theme-name: 'Mehendi Night';
+  --theme-motif: 'Gold-leaf henna';
+  --theme-vibe: 'Hopeful, formal';
+  --theme-primary:   #0E0E0E;
+  --theme-secondary: #FFF8E1;
+  --theme-accent:    #D4AF37;
+  --theme-gradient:  linear-gradient(135deg, #0E0E0E 0%, #D4AF37 100%);
+}
+[data-stage="MATCHED"] {
+  --theme-name: 'Gulabi Romance';
+  --theme-motif: 'Marigold garlands';
+  --theme-vibe: 'Excitement, butterflies';
+  --theme-primary:   #F4A7B9;
+  --theme-secondary: #F8D5CC;
+  --theme-accent:    #F7E7CE;
+  --theme-gradient:  linear-gradient(135deg, #F4A7B9 0%, #F7E7CE 100%);
+}
+[data-stage="DATE_SET"] {
+  --theme-name: 'Jasmine Evenings';
+  --theme-motif: 'Jasmine vines';
+  --theme-vibe: 'Romantic, warm';
+  --theme-primary:   #C2185B;
+  --theme-secondary: #FF8F00;
+  --theme-accent:    #FFF8E1;
+  --theme-gradient:  linear-gradient(135deg, #C2185B 0%, #FFF8E1 100%);
+}
+[data-stage="DATING"] {
+  --theme-name: 'Shaadi Season';
+  --theme-motif: 'Paisley & diyas';
+  --theme-vibe: 'Celebratory, grand';
+  --theme-primary:   #0E0E0E;
+  --theme-secondary: #D4AF37;
+  --theme-accent:    #FFFFF0;
+  --theme-gradient:  linear-gradient(135deg, #0E0E0E 0%, #D4AF37 100%);
+}
+[data-stage="WEDDING"] {
+  --theme-name: 'Baraat Bliss';
+  --theme-motif: 'Elephants & flowers';
+  --theme-vibe: 'Joyful, festive';
+  --theme-primary:   #6A1429;
+  --theme-secondary: #FF8F00;
+  --theme-accent:    #C0C0C0;
+  --theme-gradient:  linear-gradient(135deg, #6A1429 0%, #FF8F00 100%);
+}
+[data-stage="HONEYMOONING"] {
+  --theme-name: 'Honeymoon Haze';
+  --theme-motif: 'Lotus & waves';
+  --theme-vibe: 'Dreamy, luxurious';
+  --theme-primary:   #0E0E0E;
+  --theme-secondary: #6B2D89;
+  --theme-accent:    #C39BD3;
+  --theme-gradient:  linear-gradient(135deg, #0E0E0E 0%, #6B2D89 100%);
+}
+
+/* ────────────────────────── Base reset & body ────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--ink-1);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+  margin: 0;
+  color: inherit;
+}
+
+a { color: inherit; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+::-moz-selection { background: var(--theme-accent); color: var(--ink-1); }
+::selection      { background: var(--theme-accent); color: var(--ink-1); }
+
+/* ────────────────────────── Utility helpers ────────────────────────── */
+.script  { font-family: var(--font-script); }
+.display { font-family: var(--font-display); }
+.body    { font-family: var(--font-body); }
+
+.theme-fade {
+  transition: background-color var(--dur-stage) var(--ease), color var(--dur-stage) var(--ease);
+}

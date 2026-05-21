@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>App marks · The Great Indian Wedding</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg-page);
+      padding: 60px 40px;
+      display: grid;
+      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      max-width: 1100px;
+      margin-inline: auto;
+    }
+    .app {
+      border-radius: 20px;
+      padding: 40px 28px 32px;
+      color: #fff;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+    }
+    .app .glyph { font-size: 64px; line-height: 1; margin-bottom: 18px; }
+    .app .name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .app .role {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 17px;
+      opacity: 0.92;
+      margin-bottom: 14px;
+    }
+    .app .tag {
+      font-family: var(--font-script);
+      font-size: 17px;
+      opacity: 0.95;
+    }
+    .rishta { background: linear-gradient(135deg, #8FAF7E 0%, #6B9E5C 100%); }
+    .shaadi { background: linear-gradient(135deg, #B71C1C 0%, #6A1429 100%); }
+    .jannat { background: linear-gradient(135deg, #00695C 0%, #004D40 100%); }
+  </style>
+</head>
+<body>
+  <div class="app rishta">
+    <div class="glyph">✨</div>
+    <div class="name">Rishta</div>
+    <div class="role">The Matchmaker</div>
+    <div class="tag">Where destinies meet over chai</div>
+  </div>
+  <div class="app shaadi">
+    <div class="glyph">💍</div>
+    <div class="name">Shaadi Sajao</div>
+    <div class="role">Powered by Varmala</div>
+    <div class="tag">Your wedding, beautifully orchestrated</div>
+  </div>
+  <div class="app jannat">
+    <div class="glyph">✈️</div>
+    <div class="name">Jannat Safar</div>
+    <div class="role">Honeymoon Planner</div>
+    <div class="tag">Where paradise begins</div>
+  </div>
+</body>
+</html>

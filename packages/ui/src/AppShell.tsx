@@ -63,11 +63,11 @@ export const AppShell: React.FC<AppShellProps> = ({
   return (
     <div
       style={{
-        backgroundColor: currentTheme.colors.secondary,
-        color: '#1a1a1a',
+        backgroundColor: 'var(--bg-page)',
+        color: 'var(--ink-1)',
         minHeight: '100vh',
-        transition: 'background-color 300ms ease',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif',
+        transition: 'background-color var(--dur-stage) var(--ease)',
+        fontFamily: 'var(--font-body)',
       }}
     >
       <header
@@ -75,20 +75,20 @@ export const AppShell: React.FC<AppShellProps> = ({
           backgroundColor: currentTheme.colors.primary,
           color: currentTheme.colors.secondary,
           padding: '1.1rem 1.5rem 1.25rem',
-          boxShadow: '0 4px 14px rgba(0,0,0,0.1)',
-          transition: 'background-color 300ms ease',
+          boxShadow: 'var(--shadow-header)',
+          transition: 'background-color var(--dur-stage) var(--ease)',
         }}
       >
-        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+        <div style={{ maxWidth: 'var(--max-content)', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
             <div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 700, letterSpacing: 0.2 }}>
+              <div style={{ fontSize: '1.7rem', fontWeight: 700, letterSpacing: 0.3, fontFamily: 'var(--font-display)' }}>
                 {appEmoji} {appName}
               </div>
               {tagline && (
-                <div style={{ marginTop: 2, opacity: 0.92, fontSize: '0.9rem' }}>{tagline}</div>
+                <div style={{ marginTop: 2, opacity: 0.92, fontSize: 'var(--fs-meta)' }}>{tagline}</div>
               )}
-              <div style={{ marginTop: 6, opacity: 0.85, fontSize: '0.82rem' }}>
+              <div style={{ marginTop: 6, opacity: 0.85, fontSize: 'var(--fs-micro)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 {currentTheme.name} · {currentTheme.motif} · {currentTheme.vibe}
               </div>
             </div>
@@ -161,7 +161,7 @@ export const AppShell: React.FC<AppShellProps> = ({
         </div>
       </header>
 
-      <main style={{ maxWidth: 1280, margin: '0 auto', padding: '2rem 1.5rem' }}>
+      <main style={{ maxWidth: 'var(--max-content)', margin: '0 auto', padding: '2rem 1.5rem' }}>
         {children}
       </main>
 
@@ -171,12 +171,12 @@ export const AppShell: React.FC<AppShellProps> = ({
           color: currentTheme.colors.secondary,
           padding: '1.5rem',
           marginTop: '3rem',
-          transition: 'background-color 300ms ease',
+          transition: 'background-color var(--dur-stage) var(--ease)',
         }}
       >
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-          <div style={{ fontSize: '0.85rem', opacity: 0.9 }}>
-            © 2026 The Great Indian Wedding · Mock demo. Each app is a separate origin — refresh other tabs after milestones to sync the theme.
+        <div style={{ maxWidth: 'var(--max-content)', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+          <div style={{ fontSize: 'var(--fs-meta)', opacity: 0.9, fontFamily: 'var(--font-script)' }}>
+            🪷 © 2026 The Great Indian Wedding · Refresh other tabs after milestones to sync the theme
           </div>
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             {APP_LINKS.map((app) => (

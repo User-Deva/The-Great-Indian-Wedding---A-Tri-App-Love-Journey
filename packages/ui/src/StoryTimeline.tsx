@@ -50,23 +50,23 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ events, compact = 
               alignItems: 'center',
               justifyContent: 'center',
               fontSize: '1.25rem',
-              boxShadow: '0 4px 10px rgba(0,0,0,0.12)',
+              boxShadow: 'var(--shadow-chip)',
             }}
           >
             {event.emoji}
           </div>
           <div
             style={{
-              background: '#fff',
-              border: '1px solid rgba(0,0,0,0.06)',
-              borderRadius: 12,
+              background: 'var(--bg-card)',
+              border: '1px solid var(--line-1)',
+              borderRadius: 'var(--radius-inner)',
               padding: '0.9rem 1rem',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+              boxShadow: 'var(--shadow-card-2)',
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '0.5rem', flexWrap: 'wrap' }}>
-              <div style={{ fontWeight: 700, color: currentTheme.colors.primary }}>{event.title}</div>
-              <div style={{ fontSize: '0.78rem', color: 'rgba(0,0,0,0.5)' }}>
+              <div style={{ fontWeight: 700, color: currentTheme.colors.primary, fontFamily: 'var(--font-display)', fontSize: '1.1rem' }}>{event.title}</div>
+              <div style={{ fontSize: 'var(--fs-micro)', color: 'var(--ink-4)' }}>
                 {new Date(event.timestamp).toLocaleString('en-IN', {
                   day: 'numeric',
                   month: 'short',
@@ -75,7 +75,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ events, compact = 
                 })}
               </div>
             </div>
-            <p style={{ margin: '0.35rem 0 0', color: 'rgba(0,0,0,0.7)', fontSize: '0.92rem' }}>{event.description}</p>
+            <p style={{ margin: '0.35rem 0 0', color: 'var(--ink-2)', fontSize: 'var(--fs-body)' }}>{event.description}</p>
           </div>
         </div>
       ))}

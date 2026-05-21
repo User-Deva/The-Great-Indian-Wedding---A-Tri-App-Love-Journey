@@ -37,6 +37,10 @@ export const useThemeStore = create<ThemeStore>((set, get) => ({
       currentTheme: THEME_MAP[stage],
     });
 
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-stage', stage);
+    }
+
     // Trigger confetti or celebration animation on stage change
     if (typeof window !== 'undefined') {
       window.dispatchEvent(
@@ -59,5 +63,12 @@ export const useThemeStore = create<ThemeStore>((set, get) => ({
       currentTheme: THEME_MAP[defaultStage],
       error: null,
     });
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-stage', defaultStage);
+    }
   },
 }));
+
+if (typeof document !== 'undefined') {
+  document.documentElement.setAttribute('data-stage', defaultStage);
+}

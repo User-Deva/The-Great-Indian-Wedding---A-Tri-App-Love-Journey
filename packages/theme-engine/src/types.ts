@@ -20,14 +20,14 @@ export interface ThemeTokens {
 
 export const THEME_MAP: Record<JourneyStage, ThemeTokens> = {
   [JourneyStage.SEEKING]: {
-    name: 'Mehendi Morning',
+    name: 'Mehendi Night',
     colors: {
-      primary: '#8FAF7E',      // Sage green
-      secondary: '#FFFFF0',    // Ivory
+      primary: '#0E0E0E',      // Ink black
+      secondary: '#FFF8E1',    // Cream
       accent: '#D4AF37',       // Gold
     },
-    motif: 'Henna patterns',
-    vibe: 'Hopeful, fresh',
+    motif: 'Gold-leaf henna',
+    vibe: 'Hopeful, formal',
   },
   [JourneyStage.MATCHED]: {
     name: 'Gulabi Romance',
@@ -52,7 +52,7 @@ export const THEME_MAP: Record<JourneyStage, ThemeTokens> = {
   [JourneyStage.DATING]: {
     name: 'Shaadi Season',
     colors: {
-      primary: '#B71C1C',      // Royal red
+      primary: '#0E0E0E',      // Ink black
       secondary: '#D4AF37',    // Gold
       accent: '#FFFFF0',       // Ivory
     },
@@ -72,9 +72,9 @@ export const THEME_MAP: Record<JourneyStage, ThemeTokens> = {
   [JourneyStage.HONEYMOONING]: {
     name: 'Honeymoon Haze',
     colors: {
-      primary: '#00695C',      // Teal
-      secondary: '#FF7043',    // Coral
-      accent: '#FFD54F',       // Golden sand
+      primary: '#0E0E0E',      // Ink black
+      secondary: '#6B2D89',    // Plum
+      accent: '#C39BD3',       // Soft lilac
     },
     motif: 'Lotus & waves',
     vibe: 'Dreamy, luxurious',

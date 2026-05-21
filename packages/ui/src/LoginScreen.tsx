@@ -54,8 +54,8 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ appEmoji, appName, app
       <div style={{ width: '100%', maxWidth: 720 }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem', color: currentTheme.colors.secondary }}>
           <div style={{ fontSize: '3.5rem', marginBottom: '0.5rem' }}>{appEmoji}</div>
-          <h1 style={{ fontSize: '2.2rem', margin: '0 0 0.5rem', letterSpacing: 0.3 }}>{appName}</h1>
-          <p style={{ margin: 0, opacity: 0.92, fontSize: '1.05rem' }}>{appTagline}</p>
+          <h1 style={{ fontSize: 'var(--fs-hero)', margin: '0 0 0.5rem', letterSpacing: 0.3, fontFamily: 'var(--font-display)', fontWeight: 700 }}>{appName}</h1>
+          <p style={{ margin: 0, opacity: 0.92, fontSize: 'var(--fs-lead)', fontFamily: 'var(--font-script)' }}>{appTagline}</p>
         </div>
 
         <Card>

@@ -24,10 +24,11 @@ export const Button: React.FC<ButtonProps> = ({
     padding,
     fontSize,
     fontWeight: 600,
-    borderRadius: 10,
+    fontFamily: 'var(--font-body)',
+    borderRadius: 'var(--radius-button)',
     border: 'none',
     cursor: disabled ? 'not-allowed' : 'pointer',
-    transition: 'transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease',
+    transition: 'transform var(--dur-press) var(--ease), box-shadow var(--dur-press) var(--ease), opacity var(--dur-press) var(--ease)',
     opacity: disabled ? 0.55 : 1,
     width: fullWidth ? '100%' : 'auto',
     letterSpacing: 0.2,
@@ -41,7 +42,7 @@ export const Button: React.FC<ButtonProps> = ({
     variantStyle = {
       backgroundColor: currentTheme.colors.primary,
       color: currentTheme.colors.secondary,
-      boxShadow: '0 6px 18px rgba(0,0,0,0.12)',
+      boxShadow: 'var(--shadow-button)',
     };
   } else if (variant === 'secondary') {
     variantStyle = {
@@ -92,13 +93,13 @@ export const Card: React.FC<CardProps> = ({ children, accent = false, padded = t
     <div
       onClick={onClick}
       style={{
-        backgroundColor: '#ffffff',
-        borderRadius: 16,
-        boxShadow: '0 4px 18px rgba(0,0,0,0.06)',
-        border: accent ? `2px solid ${currentTheme.colors.primary}` : '1px solid rgba(0,0,0,0.06)',
+        backgroundColor: 'var(--bg-card)',
+        borderRadius: 'var(--radius-card)',
+        boxShadow: 'var(--shadow-card)',
+        border: accent ? `2px solid ${currentTheme.colors.primary}` : '1px solid var(--line-1)',
         padding: padded ? '1.5rem' : 0,
         cursor: onClick ? 'pointer' : 'default',
-        transition: 'transform 160ms ease, box-shadow 160ms ease',
+        transition: 'transform var(--dur-hover) var(--ease), box-shadow var(--dur-hover) var(--ease)',
         ...style,
       }}
     >
@@ -131,10 +132,10 @@ export const Section: React.FC<SectionProps> = ({ title, subtitle, children, act
         >
           <div>
             {title && (
-              <h2 style={{ margin: 0, fontSize: '1.4rem', color: currentTheme.colors.primary }}>{title}</h2>
+              <h2 style={{ margin: 0, fontSize: 'var(--fs-h3)', color: currentTheme.colors.primary, fontFamily: 'var(--font-display)', fontWeight: 600 }}>{title}</h2>
             )}
             {subtitle && (
-              <p style={{ margin: '0.25rem 0 0', color: 'rgba(0,0,0,0.55)', fontSize: '0.92rem' }}>{subtitle}</p>
+              <p style={{ margin: '0.25rem 0 0', color: 'var(--ink-3)', fontSize: 'var(--fs-body)' }}>{subtitle}</p>
             )}
           </div>
           {actions && <div>{actions}</div>}
@@ -152,11 +153,11 @@ interface BadgeProps {
 
 export const Badge: React.FC<BadgeProps> = ({ children, tone = 'neutral' }) => {
   const palette: Record<string, { bg: string; fg: string }> = {
-    neutral: { bg: '#eef0f5', fg: '#444' },
-    positive: { bg: '#e6f4ea', fg: '#1b6e3a' },
-    warning: { bg: '#fff3e0', fg: '#a35400' },
-    danger: { bg: '#fdecea', fg: '#a8201a' },
-    info: { bg: '#e7f0fb', fg: '#1f4f87' },
+    neutral: { bg: 'var(--tone-neutral-bg)', fg: 'var(--tone-neutral-fg)' },
+    positive: { bg: 'var(--tone-positive-bg)', fg: 'var(--tone-positive-fg)' },
+    warning: { bg: 'var(--tone-warning-bg)', fg: 'var(--tone-warning-fg)' },
+    danger: { bg: 'var(--tone-danger-bg)', fg: 'var(--tone-danger-fg)' },
+    info: { bg: 'var(--tone-info-bg)', fg: 'var(--tone-info-fg)' },
   };
   const p = palette[tone];
   return (
@@ -207,14 +208,14 @@ export const EmptyState: React.FC<EmptyStateProps> = ({ emoji = '✨', title, de
       textAlign: 'center',
       padding: '3rem 1.5rem',
       backgroundColor: 'rgba(255,255,255,0.6)',
-      borderRadius: 16,
-      border: '1px dashed rgba(0,0,0,0.15)',
+      borderRadius: 'var(--radius-card)',
+      border: '1px dashed var(--line-3)',
     }}
   >
     <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{emoji}</div>
-    <h3 style={{ margin: '0 0 0.5rem', fontSize: '1.15rem' }}>{title}</h3>
+    <h3 style={{ margin: '0 0 0.5rem', fontSize: 'var(--fs-h4)', fontFamily: 'var(--font-display)', fontWeight: 600 }}>{title}</h3>
     {description && (
-      <p style={{ margin: 0, color: 'rgba(0,0,0,0.55)', fontSize: '0.95rem' }}>{description}</p>
+      <p style={{ margin: 0, color: 'var(--ink-3)', fontSize: 'var(--fs-body)' }}>{description}</p>
     )}
     {action && <div style={{ marginTop: '1.25rem' }}>{action}</div>}
   </div>
